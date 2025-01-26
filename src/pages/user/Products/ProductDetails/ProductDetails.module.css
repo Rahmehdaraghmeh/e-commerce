@@ -1,0 +1,132 @@
+.productDetails {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* قسم الصور */
+  .imageSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .mainImageContainer {
+    width: 100%;
+  }
+  
+  .mainImage {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subImagesContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .subImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .subImage:hover {
+    transform: scale(1.1);
+  }
+  
+  /* قسم التفاصيل */
+  .details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .pricing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .originalPrice {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.2rem;
+  }
+  
+  .finalPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .rating {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .starIcon {
+    color: #ffc107;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .review {
+    margin-bottom: 10px;
+  }
+  
+  .reviewRating {
+    display: flex;
+    gap: 5px;
+  }
+/* قسم المخزون */
+.stock {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.inStock {
+  color: #28a745; /* لون أخضر للدلالة على أن المنتج متوفر */
+}
+
+.outOfStock {
+  color: #dc3545; /* لون أحمر للدلالة على أن المنتج غير متوفر */
+}

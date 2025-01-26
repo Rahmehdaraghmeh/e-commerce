@@ -37,7 +37,7 @@ setisLoading(true)
           theme: "dark",
           transition: Slide,
           });
-        navigate('/Login')
+        navigate('/auth/Login')
       }
       console.log(response.data);
     } catch (error) {

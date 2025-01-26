@@ -11,9 +11,9 @@ export default function CustomNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to={'/login'}>Log in</Nav.Link>
+            <Nav.Link as={Link} to={'/Categories'}>Categories</Nav.Link>
 
-            <Nav.Link as={Link} to={'/register'}>Registor</Nav.Link>
+            <Nav.Link as={Link} to={'/Products'}>Products</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
