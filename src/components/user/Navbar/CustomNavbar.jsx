@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import { FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 export default function CustomNavbar() {
@@ -14,6 +15,8 @@ export default function CustomNavbar() {
             <Nav.Link as={Link} to={'/Categories'}>Categories</Nav.Link>
 
             <Nav.Link as={Link} to={'/Products'}>Products</Nav.Link>
+            <Nav.Link as={Link} to={'/Cart'}><FaShoppingCart size={25} color="#000000" />
+            </Nav.Link>
             
           </Nav>
         </Navbar.Collapse>

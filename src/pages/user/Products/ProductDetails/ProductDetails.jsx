@@ -1,12 +1,17 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import StripedExample from '../../../../components/ProgressBar/ProgressBar';
 import { AiFillStar } from 'react-icons/ai';
 import useFetch from '../../../../assets/Hooks/UseFetch';
 import styles from './ProductDetails.module.css';
+import { Button } from 'react-bootstrap';
+import axios from 'axios';
+import { Slide, toast } from 'react-toastify';
+
 
 export default function ProductDetails() {
   const { productId } = useParams();
+const navigate=useNavigate()
   const { data, isLoading, error } = useFetch(
     `https://ecommerce-node4.onrender.com/products/${productId}`
   );
@@ -23,6 +28,33 @@ export default function ProductDetails() {
 
   if (!product) {
     return <p>Product not found.</p>;
+  }
+  const addProductToCart= async()=>{
+     const token =localStorage.getItem("userToken");
+     console.log(token);
+     
+const response=await axios.post('https://ecommerce-node4.onrender.com/cart',{
+  productId:productId
+},{
+  headers:{
+    Authorization:`Tariq__${token}`
+  }
+})
+if (response.status===201) {
+  toast.info('product add successfully ', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Slide,
+    });
+    navigate('/Cart')
+}
+    
   }
 
   return (
@@ -118,6 +150,8 @@ export default function ProductDetails() {
           )}
         </div>
       </div>
+      {/* add to cart */}
+      <div> <Button className='btn btn-primary' onClick={addProductToCart}> add to cart </Button></div>
     </div>
   );
 }

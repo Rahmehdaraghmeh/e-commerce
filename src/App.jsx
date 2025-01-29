@@ -12,6 +12,7 @@ import Categories from './pages/user/Catogary/Categories';
 import Products from './pages/user/Products/Products';
 import CategoryProducts from './pages/user/Products/CategoryProducts';
 import ProductDetails from './pages/user/Products/ProductDetails/ProductDetails';
+import Cart from './pages/user/Cart/Cart';
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -32,22 +33,26 @@ export default function App() {
       element:<Userlayout/>,
       children:[
         {
-          path:'/',
+          path:'',
           element:<Home/>
         },
         {
-          path:'/Categories',
+          path:'Categories',
           element:<Categories/>
         },{
-          path:'/Categories/:categoryid',
+          path:'Categories/:categoryid',
           element:<CategoryProducts/>
         },
         {
-          path:'/Products',
+          path:'Products',
           element:<Products/>
         },{
-          path:'/Product/:productId',
+          path:'Product/:productId',
           element:<ProductDetails/>
+        },
+        {
+          path:'Cart',
+          element:<Cart/>
         }
       ]
     },{
